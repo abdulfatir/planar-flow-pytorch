@@ -8,15 +8,21 @@ This repo contains a Pytorch implementation of Planar Flow presented in (Rezende
 
 ### MNIST Results
 
-| Model | Latent Space Size | Test Lower Bound |
-:-------------------------:|:-------------------------:|:-------------------------:
-VAE |  20 | -99.37 
-VAE+PF (K=20) |  20 | -98.23
+Input | Model | Latent Space Size | Test Lower Bound |
+:--------:|:-----------------|:---:|:------:
+[0,1]     |    VAE           |  20 | -99.37 
+[0,1]     |    VAE+PF (K=20) |  20 | -98.23
+{0,1}     |    VAE           |  20 | -84.60
+{0,1}     |    VAE+PF (K=20) |  20 | -81.83
+
+[0,1] denotes float values between 0 and 1 and {0,1} denotes binary values.
 
 #### Usage
 
 Vanilla VAE: `python vae.py`    
 VAE with Planar Flow: `python vae-pf.py`
+
+Add `--binary` option to binarize the input dataset.
 
 
 ### References
